@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おみくじ</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main>
+
+    <section class="title_section">
+      <h1>おみくじ</h1>
+    </section>
+
+    <section class="result_section" id="result">
+      <p>結果は？？</p>
+    </section>
+
+    <section class="button_section">
+      <button id="button">おみくじをひく</button>
+    </section>
+
+  </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+
+  //alert("おみくじ引いてみましょう!");
+
+  //console.log(`javaScript`);
+
+  //数字先頭NG  
+  //const number1 = 100;
+  //const number2 = 200;
+   
+  //const result1 = number1+number2;
+  //console.log(result1)
+
+//""''``//
+  //const text1 = "G's";
+  //const text2 = "ACADMY";  
+
+  //const result2 = text1 +` `+ text2;
+    //console.log(result2)
+
+    //const randomNumber1 = Math.random();
+    //alert(randomNumber1)
+   
+ 
+
+
+
+
+    //  document.getElementById("button").addEventListener("click",function(){
+
+      
+$('#button').on('click',function(){
+  const max = 4;
+  const min = 0;
+  const randomNumber2 = Math.floor(Math.random() * (max - min + 1) + min);
+  console.log(randomNumber2);
+
+      if (randomNumber2 === 0) {
+        //.textを.htmlに置き換えることができる
+    $("#result").text("大吉")
+
+  } else if (randomNumber2 === 1) {
+
+    $("#result").text("中吉")
+
+  }
+  else if (randomNumber2 === 2) {
+
+    $("#result").text("小吉")
+
+  }
+  else if (randomNumber2 === 3) {
+
+    $("#result").text("凶")
+
+  }
+  else if (randomNumber2 === 4) {
+
+    $("#result").text("大凶")
+
+  }
+
+
+});
+
+
+</script>
+
+</body>
+
+</html>

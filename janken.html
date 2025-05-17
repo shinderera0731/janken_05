@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>じゃんけん</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet" />
+  <link rel="stylesheet" href="css/janken.css">
+</head>
+
+<body>
+  <main>
+
+    <section>
+      <h1>じゃんけん</h1>
+    </section>
+
+    <section id="pc">
+      <p class="pc1">コンピュータの手は？？</p>
+    </section>
+
+    <section id="result">
+      <p>勝敗は？？</p>
+    </section>
+
+      <section id="result3">
+        <p>自分の手</p>
+      </section>
+
+    <section>
+      <button id="gu_btn" >✊</button>
+      <button  id="cho_btn">✌️</button>
+      <button  id="par_btn">✋</button>
+    </section>
+
+  </main>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+         //  $("#button1").on('click', function () {
+
+           //  const randomNumber2 = 0
+             //console.log(randomNumber2)
+             //alert("randomNumber2");  
+              
+             //const max = 2;
+             //const min = 0;
+
+             //const randomNumber3 = Math.floor(Math.random() * (max - min + 1) + min);
+             //console.log(randomNumber2);
+              //console.log(randomNumber3);
+
+
+
+            // if (randomNumber3 === 0) {
+               //.textを.htmlに置き換えることができる
+  //             $("#result2").text("ぐー")
+//
+    //         } else if (randomNumber3 === 1) {
+//
+  //             $("#result2").text("ちょき")
+//
+  //           }
+    //         else if (randomNumber3 === 2) {
+//
+  //             $("#result2").text("ぱー")
+
+    //         }
+      //        else if (randomNumber2) {
+//
+  //             $("#result3").text("ぱー")
+//
+  //           }
+
+    //         else if (randomNumber3 === randomNumber2) {
+      //         //.textを.htmlに置き換えることができる
+        //       $("#result").text("あいこです")
+
+       
+          //   }
+            // else if (randomNumber3 === 2 && randomNumber2 === 0) {
+
+              // $("#result").text("勝ち")
+
+            // }/
+
+            // else {
+             //  $("result").text("負け")
+             //}
+
+
+
+
+               //    });
+        
+    $("#gu_btn").on("click", function () {
+      var humanGu = 1;
+      var comp = Math.floor(Math.random() * 3 + 1);
+      if (comp == 1) {
+        $("#pc").text("相手の手：✊");
+         $("#pc").css({ 'font-sise': '60px', });
+        $("#result").text("あいこ");
+        $("#result").css({ 'font-sise': '60px', });
+        $("#result").addClass('draw-reaction');
+        $("#result3").text("自分の手：✊");  
+      } else if (comp == 2) {
+        $("#pc").text("相手の手：✌️");
+        $("#pc").css({ 'font-sise': '60px', });
+        $("#result").text("勝ち");
+        $("#result").css({ 'font-sise': '60px', });
+        $("#result").addClass(`win-reaction`);
+        $("#result3").text("自分の手：✊");
+      } else if (comp == 3) {
+        $("#pc").text("相手の手：✋");
+        $("#pc").css({ 'font-sise': '60px', });
+        $("#result").text("負け");
+        $("#result").css({ 'font-sise': '50px', });
+        $("#result").addClass("lose-reaction");
+        $("#result3").text("自分の手：✊");
+       
+      }
+    });
+
+
+
+    $("#cho_btn").on("click", function () {
+      var cho = 2;
+      var comp = Math.floor(Math.random() * 3 + 1);
+      if (comp == 1) {
+        $("#pc").text("相手の手：✊");
+        $("#pc").css({ 'font-sise': '60px', });
+        $("#result").text("負け");
+        $("#result").css({ 'font-sise': '50px', });
+        $("#result").addClass("lose-reaction"); 
+        $("#result3").text("自分の手：✌️");
+        
+      } else if (comp == 2) {
+        $("#pc").text("相手の手：✌️");
+        $("#pc").css({ 'font-sise': '60px', });
+        $("#result").text("あいこ");
+        $("#result").css({ 'font-sise': '50px', });
+        $("#result").addClass('draw-reaction');
+        $("#result3").text("自分の手：✌️");
+        
+      } else if (comp == 3) {
+        $("#pc").text("相手の手：✋");
+        $("#pc").css({ 'font-sise': '60px', });
+        $("#result").text("勝ち");
+        $("#result").css({ 'font-sise': '50px', });
+        $("#result").addClass(`win-reaction`);
+        $("#result3").text("自分の手：✌️");
+        
+      }
+    });
+
+
+    
+    $("#par_btn").on("click", function () {
+      var humaPar = 3;
+      var comp = Math.floor(Math.random() * 3 + 1);
+      if (comp == 1) {
+        $("#pc").text("相手の手：✊");
+        $("#pc").css({ 'font-sise': '60px', });
+        $("#result").text("勝ち");
+        $("#result").css({ 'font-sise': '50px', });
+        $("#result").addClass(`win-reaction`);
+         $("#result3").text("自分の手：✋");
+         $('#result')[0].reset();
+      } else if (comp == 2) {
+        $("#pc").text("相手の手：✌️");
+        $("#pc").css({ 'font-sise': '60px', });
+        $("#result").text("負け");
+         $("#result").css({ 'font-sise':'50px',});
+        $("#result").addClass("lose-reaction");
+        $("#result3").text("自分の手：✋");
+        $('#result')[0].reset();
+      } else if (comp == 3) {
+        $("#pc").text("相手の手：✋")
+        $("#pc").css({ 'font-sise': '60px', });
+        $("#result").text("あいこ");
+        $("#result").css({ 'font-sise': '50px', });
+        $("#result").addClass('draw-reaction');
+        $("#result3").text("自分の手：✋");
+        $('#result')[0].reset();
+      }
+    });
+    
+
+
+  </script>
+
+
+    
+</body>
+
+</html>
